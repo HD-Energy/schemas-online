@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Diagnostic-detailled view json description",
+    "$id": "http://schemas.dashboard.hdenergie.ca/views/diagnostic-detailled/v1.json",
+    "description": "A complete description of all contents to display in the webpage for giving a complete overview of the results of the diagnostic. Including explanation and anything else",
+    
+
+    "type":"object",
+    "properties": {
+        "view":{
+            "type":"array",
+            "items": {
+                "$ref": "../object/base/v1.json"
+            }
+        },
+        "translationStrings":{
+            "$ref": "../../translations/strings/v1.json"
+        }
+    }
+
+
+
+}

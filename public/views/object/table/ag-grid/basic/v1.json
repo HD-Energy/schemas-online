@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://schemas.dashboard.hdenergie.ca/views/object/table/ag-grid/basic/v1.json",
+    "title": "A basic ag-grid component",
+    "description": "A simple ag-grid table that you feed all required data",
+
+    "type":"object",
+    "properties": {
+        "columnDefs": {
+            "type":"array",
+            "items": {
+                "type":"object",
+                "$comment": "This are the columndefs as documented here : https://www.ag-grid.com/javascript-grid-column-definitions/ "
+            }
+        },
+        "rowData": {
+            "type":"array",
+            "items": {
+                "type":"object",
+                "$comment": "This is the rowData as documented by ag-grid"
+            }
+        }
+    },
+    "required": ["columnDefs", "rowData"]
+}

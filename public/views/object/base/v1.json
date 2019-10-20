@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://schemas.dashboard.hdenergie.ca/views/object/base/v1.json",
+    "title": "Base Block View Item",
+    "description": "This is the base construct for a block item in a view",
+
+    "type":"object",
+    "properties": {
+        "objectRefURI": {
+            "type":"string",
+            "$comment": "This is a reference so that we load the correct schema for the object"
+        }
+
+    },
+    
+    "required": ["objectRefURI"],
+
+
+    "allOf": [
+        {
+            "if": {
+                "properties": {"objectRefURI": {"const": "title/v1"}}
+            },
+            "then": {
+                "$ref": "../title/v1.json"
+            }
+        },
+        {
+            "if": {
+                "properties": {"objectRefURI": {"const": "paragraph/v1"}}
+            },
+            "then": {
+                "$ref": "../paragraph/v1.json"
+            }
+        }
+    ]
+}

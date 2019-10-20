@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://schemas.dashboard.hdenergie.ca/views/object/plot/timeSeries/v1.json",
+    "title": "TimeSeries plot",
+    "description": "A plot block item for displaying timeseries",
+    "$comment": "This use plotly.js to draw a plot for a time series",
+
+    "definitions": {
+
+        "influxDbDataSource": {
+            "type":"object",
+            "properties": {
+                "dbName":{
+                    "type":"string"
+                },
+                "dbMeas":{
+                    "type":"string"
+                },
+                "dbField":{
+                    "type":"string"
+                },
+                "graphType":{
+                    "type":"string",
+                    "enum": ["continuous","discrete"],
+                    "default":"continuous"
+                }
+            },
+            "required": ["dbName","dbMeas","dbField"]
+        },
+
+        "embeddedDataSource":{
+            "type":"object",
+            "properties": {
+                "x":{
+                    "type":"array",
+                    "$comment": "Put here the x values of the data"
+                },
+                "y":{
+                    "type":"array",
+                    "$comment": "Put here the y values of the data"
+                }
+            },
+            "required": ["x","y"]
+        }
+    },
+
+
+    "type":"object",
+    "properties": {
+        "traces": {
+            "type":"array",
+            "items": {
+                "type":"object",
+                "properties": {
+                    "traceName":{
+                        "type":"string"
+                    },
+                    "yaxis":{
+                        "type":"string",
+                        "enum": ["y","y2","y3","y4","y5"],
+                        "default":"y"
+                    },
+                    "mode":{
+                        "type":"string",
+                        "$comment": "See docs of plotly.js here : https://plot.ly/javascript/reference/",
+                        "enum": ["lines","markers","lines+markers","none"],
+                        "default":"lines"
+                    },
+                    "dataSource":{
+                        "type":"object",
+                        "oneOf": [
+                            {
+                                "properties": {
+                                    "influxDbDataSource":{ "$ref": "#/definitions/influxDbDataSource"}
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "embeddedDataSource":{ "$ref": "#/definitions/embeddedDataSource"}
+                                }
+                            }
+                        ]
+                    }
+                },
+                "required": ["traceName","dataSource"]
+
+            }
+        },
+        "layout":{
+            "type":"object",
+            "$comment": "See plotly documentation about the layout you can give, But for now it's mostly a way to input the y axis title and units (yaxis, yaxis2, yaxis3, etc.)"
+
+        }
+    },
+    "required": ["traces", "layout"]
+}
