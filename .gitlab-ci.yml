@@ -3,9 +3,11 @@ image: alpine:latest
 pages:
   stage: deploy
   script:
-  - echo 'Nothing to do...'
+  - mkdir public
+  - mv schemas/* public
+  - echo 'done!'
   artifacts:
     paths:
-    - schemas
+    - public
   only:
   - master
