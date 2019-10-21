@@ -32,6 +32,22 @@
             "then": {
                 "$ref": "../paragraph/v1.json"
             }
+        },
+        {
+            "if": {
+                "properties": {"objectRefURI": {"const": "plot/timeSeries/v1"}}
+            },
+            "then": {
+                "$ref": "../plot/timeSeries/v1.json"
+            }
+        },
+        {
+            "if": {
+                "properties": {"objectRefURI": {"const": "table/ag-grid/basic/v1"}}
+            },
+            "then": {
+                "$ref": "../table/ag-grid/basic/v1.json"
+            }
         }
     ]
 }
