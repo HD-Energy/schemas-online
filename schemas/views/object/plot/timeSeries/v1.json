@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://schemas.dashboard.hdenergie.ca/views/object/plot/timeSeries/v1.json",
+    "$id": "https://schemas.dashboard.hdenergie.ca/views/object/plot/timeSeries/v1.json",
     "title": "TimeSeries plot",
     "description": "A plot block item for displaying timeseries",
     "$comment": "This use plotly.js to draw a plot for a time series",
