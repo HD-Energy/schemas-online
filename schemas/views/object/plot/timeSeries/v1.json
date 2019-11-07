@@ -72,12 +72,14 @@
                             {
                                 "properties": {
                                     "influxDbDataSource":{ "$ref": "#/definitions/influxDbDataSource"}
-                                }
+                                },
+                                "required": ["influxDbDataSource"]
                             },
                             {
                                 "properties": {
                                     "embeddedDataSource":{ "$ref": "#/definitions/embeddedDataSource"}
-                                }
+                                },
+                                "required": ["embeddedDataSource"]
                             }
                         ]
                     }
