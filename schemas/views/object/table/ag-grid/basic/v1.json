@@ -17,7 +17,31 @@
             "type":"array",
             "items": {
                 "type":"object",
-                "$comment": "This is the rowData as documented by ag-grid"
+                "$comment": "This is the rowData as documented by ag-grid",
+
+                "additionalProperties": {
+                    "oneOf": [
+                        {
+                            "type":"string",
+                            "$comment": "This is a way to put directly here the translated string ID"
+                        },
+                        {
+                            "type":"number",
+                            "$comment": "Put here a number to display"
+                        },
+                        {
+                            "$comment": "This is a way to put here a base json view object",
+                            "$ref": "../../../base/v1.json"
+                        },
+                        {
+                            "type":"array",
+                            "items": {
+                                "$comment": "This is a way to put multiple json view objects in a cell",
+                                "$ref": "../../../base/v1.json"
+                            }
+                        }
+                    ]
+                }
             }
         }
     },
