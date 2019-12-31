@@ -12,8 +12,9 @@
             "enum":[
                 "title/v1",
                 "paragraph/v1",
+                "flag/v1",
                 "plot/timeSeries/v1",
-                "table/ag-grid/basic/v1"
+                "table/ag-grid/basic/v1"                
             ]
         }
 
