@@ -41,6 +41,14 @@
         },
         {
             "if": {
+                "properties": {"objectRefURI": {"const": "flag/v1"}}
+            },
+            "then": {
+                "$ref": "../flag/v1.json"
+            }
+        }
+        {
+            "if": {
                 "properties": {"objectRefURI": {"const": "plot/timeSeries/v1"}}
             },
             "then": {

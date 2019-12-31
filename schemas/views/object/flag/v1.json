@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://schemas.dashboard.hdenergie.ca/views/object/flag/v1.json",
+    "title": "Flag object in a diagnosis",
+    "description": "A default way to display a flag object in a diagnosis",
+    "$comment": "This will display a flag object. It will display an icon with color to represent the flag value. This icon will be clickable and will be able to present a window that will permit the user to dismiss or acknowledge the alert",
+
+    "type":"object",
+    "properties": {
+        "flagPath": {
+            "type":"string"
+        }
+    },
+    "required": ["flagPath"]
+}
