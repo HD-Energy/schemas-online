@@ -15,6 +15,10 @@
         },
         "translationStrings":{
             "$ref": "../../translations/strings/v1.json"
+        },
+        "flags": {
+            "$comment": "This is optional in the json_view, it will be added from the mongodb record automatically",
+            "$ref": "../../flags/v1.json"
         }
     }
 
