@@ -24,6 +24,7 @@
     },
 
     "type":"object",
+    "$comment": "All the properties Names act as the flagPath",
     "additionalProperties": {
         "type":"object",
         "properties": {
