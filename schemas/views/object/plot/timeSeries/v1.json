@@ -66,6 +66,45 @@
                         "enum": ["lines","markers","lines+markers","none"],
                         "default":"lines"
                     },
+                    "line":{
+                        "type": "object",
+                        "properties": {
+                            "color": {
+                                "type" :"string",
+                                "$comment": "This is the color of the line in string form : 'red' or '#1f77b4' or 'rgb(31, 119, 180)'  "
+                            },
+                            "width": {
+                                "type": "number",
+                                "default": 2,
+                                "minimum": 0,
+                                "$comment": "This is the width of the line in px"
+                            },
+                            "shape": {
+                                "type": "string",
+                                "enum": ["linear", "spline", "hv", "vh", "hvh", "vhv"],
+                                "default": "linear",
+                                "$comment": "Determines the line shape. With *spline* the lines are drawn using spline interpolation. The other available values correspond to step-wise line shapes."
+                            },
+                            "smoothing": {
+                                "type": "number",
+                                "minimum": 0, 
+                                "maximum": 1.3,
+                                "default": 1,
+                                "$comment": "Has an effect only if `shape` is set to *spline* Sets the amount of smoothing. *0* corresponds to no smoothing (equivalent to a *linear* shape)."
+                            },
+                            "dash": {
+                                "type": "string",
+                                "enum": ["solid", "dot", "dash", "longdash", "dashdot", "longdashdot"],
+                                "default": "solid",
+                                "$comment": "Sets the dash style of lines. Set to a dash type string (*solid*, *dot*, *dash*, *longdash*, *dashdot*, or *longdashdot*) or a dash length list in px (eg *5px,10px,2px,2px*)"
+                            },
+                            "simplify": {
+                                "type":"boolean",
+                                "default": true,
+                                "$comment": "Simplifies lines by removing nearly-collinear points. When transitioning lines, it may be desirable to disable this so that the number of points along the resulting SVG path is unaffected."
+                            }
+                        }
+                    },
                     "dataSource":{
                         "type":"object",
                         "oneOf": [
